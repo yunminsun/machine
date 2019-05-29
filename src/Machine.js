@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Machine.scss';
 
 class Machine extends Component {
 
@@ -72,7 +73,7 @@ class Machine extends Component {
     }
 
     render() {
-
+ 
         const goodsList1 = this.state.goods.slice(0,5).map(
             (goods,index) => (<td key={index}>{goods}&nbsp;</td>)
         )
@@ -83,22 +84,22 @@ class Machine extends Component {
             (goods,index) => (<td key={index}>{goods}&nbsp;</td>)
         )
         const payList1 = this.state.pay.slice(0,5).map(
-            (pay,index) => (<td key={index}><button value={pay} onClick={()=>this.handleGoodsPush(index)}>{pay}</button>&nbsp;</td>)
+            (pay,index) => (<td key={index}><button className="btn" value={pay} onClick={()=>this.handleGoodsPush(index)}>{pay}</button>&nbsp;</td>)
         )
         const payList2 = this.state.pay.slice(5,10).map(
-            (pay,index) => (<td key={index}><button value={pay} onClick={()=>this.handleGoodsPush(index+5)}>{pay}</button>&nbsp;</td>)
+            (pay,index) => (<td key={index}><button className="btn" value={pay} onClick={()=>this.handleGoodsPush(index+5)}>{pay}</button>&nbsp;</td>)
         )
         const payList3 = this.state.pay.slice(10,15).map(
-            (pay,index) => (<td key={index}><button value={pay} onClick={()=>this.handleGoodsPush(index+10)}>{pay}</button>&nbsp;</td>)
+            (pay,index) => (<td key={index}><button className="btn" value={pay} onClick={()=>this.handleGoodsPush(index+10)}>{pay}</button>&nbsp;</td>)
         )
         const cashList = this.state.cashList.map(
             (cash,index) => (<option value={cash} key={index}>{cash}원</option>)
         )
         const cmpGoods = this.state.cmpGoods.map(
-            (cmpGoods,index) => (<button className="button" key={index} onClick={() => this.handleRemove(index)}>{cmpGoods}</button>)
+            (cmpGoods,index) => (<button key={index} onClick={() => this.handleRemove(index)}>{cmpGoods}</button>)
         )
         return (
-            <div>
+            <div className="Machine">
                 {this.props.name}의 자판기<br /><br />
                 <table>
                     <tbody>
@@ -126,7 +127,7 @@ class Machine extends Component {
                 <table>
                     <tbody>
                         <tr>
-                            <td colSpan={3}>
+                            <td colSpan={3} className="Machine-inside">
                                 {this.state.message}
                             </td>
                         </tr>
