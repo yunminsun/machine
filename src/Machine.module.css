@@ -1,0 +1,17 @@
+.box {
+    display : inline-block;
+    width: 268px;
+    height: 400px;
+    border: 1px solid black;
+    position: fixed;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper {
+    background: gray;
+    color: white;
+    padding: 1rem;
+    font-size: 1em;
+  }

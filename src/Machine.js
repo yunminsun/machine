@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Box from './Machine.module.css'
 
 class Machine extends Component {
 
@@ -98,7 +99,7 @@ class Machine extends Component {
             (cmpGoods,index) => (<button className="button" key={index} onClick={() => this.handleRemove(index)}>{cmpGoods}</button>)
         )
         return (
-            <div>
+            <div className={Box.box}>
                 {this.props.name}의 자판기<br /><br />
                 <table>
                     <tbody>
@@ -125,7 +126,7 @@ class Machine extends Component {
                 <hr />
                 <table>
                     <tbody>
-                        <tr>
+                        <tr className={Box.wrapper}>
                             <td colSpan={3}>
                                 {this.state.message}
                             </td>
